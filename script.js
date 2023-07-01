@@ -9,7 +9,7 @@ function getComputerChoice(){
     const options = ["piedra", "papel", "tijeras"];
     return options[Math.floor(Math.random() * options.length)];
 }
-console.log(getComputerChoice());
+console.log(computerSelection);
 
 function playRound(playerSelection, computerSelection){
     if(playerSelection == "piedra" && computerSelection == "tijeras"
@@ -21,8 +21,8 @@ function playRound(playerSelection, computerSelection){
     || computerSelection == "tijeras" && playerSelection == "papel"){
         console.log(`Lo siento, ${user}! ${computerSelection} le gana a ${playerSelection}`);
     } else{
-        console.log("Es un empate");
+        console.log(`Es un empate, ambos eligieron ${playerSelection}`);
     }
 }
 
-playRound();
+playRound(playerSelection, computerSelection);
