@@ -1,28 +1,33 @@
 const user = prompt("¿Cuál es tu nombre?");
-let playerSelection = prompt("Escoge: Piedra, Papel o Tijeras");
-playerSelection = playerSelection.toLowerCase();
+let playerSelection = playerChoice();
 const computerSelection = getComputerChoice();
 
-console.log(playerSelection);
+
+function playerChoice(){
+    let opcion = prompt("Escoge: Piedra, Papel o Tijeras");
+    return opcion.toLowerCase();
+}
 
 function getComputerChoice(){
     const options = ["piedra", "papel", "tijeras"];
     return options[Math.floor(Math.random() * options.length)];
 }
+
+console.log(playerSelection);
 console.log(computerSelection);
 
 function playRound(playerSelection, computerSelection){
     if(playerSelection == "piedra" && computerSelection == "tijeras"
     || playerSelection == "papel" && computerSelection == "piedra"
     || playerSelection == "tijeras" && computerSelection == "papel"){
-        console.log(`Felicidades, ${user}! ${playerSelection} le gana a ${computerSelection}`);
+        return `Felicidades, ${user}! ${playerSelection} le gana a ${computerSelection}`;
     } else if(computerSelection == "piedra" && playerSelection == "tijeras"
     || computerSelection == "papel" && playerSelection == "piedra"
     || computerSelection == "tijeras" && playerSelection == "papel"){
-        console.log(`Lo siento, ${user}! ${computerSelection} le gana a ${playerSelection}`);
+        return `Lo siento, ${user}! ${computerSelection} le gana a ${playerSelection}`;
     } else{
-        console.log(`Es un empate, ambos eligieron ${playerSelection}`);
+        return `Es un empate, ambos eligieron ${playerSelection}`;
     }
 }
 
-playRound(playerSelection, computerSelection);
+console.log(playRound(playerSelection, computerSelection));
