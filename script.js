@@ -1,7 +1,4 @@
 const user = prompt("¿Cuál es tu nombre?");
-let playerSelection = playerChoice();
-const computerSelection = getComputerChoice();
-
 
 function playerChoice(){
     let opcion = prompt("Escoge: Piedra, Papel o Tijeras");
@@ -13,10 +10,16 @@ function getComputerChoice(){
     return options[Math.floor(Math.random() * options.length)];
 }
 
-console.log(playerSelection);
-console.log(computerSelection);
+//console.log(playerSelection);
+//console.log(computerSelection);
 
-function playRound(playerSelection, computerSelection){
+function playRound(){
+    let playerSelection = playerChoice();
+    const computerSelection = getComputerChoice();
+    
+    console.log(playerSelection);
+    console.log(computerSelection);
+
     if(playerSelection == "piedra" && computerSelection == "tijeras"
     || playerSelection == "papel" && computerSelection == "piedra"
     || playerSelection == "tijeras" && computerSelection == "papel"){
@@ -30,4 +33,4 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
-console.log(playRound(playerSelection, computerSelection));
+console.log(playRound());
