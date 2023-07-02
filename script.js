@@ -1,3 +1,4 @@
+// Se obtiene la información del user
 const user = prompt("¿Cuál es tu nombre?");
 
 function playerChoice(){
@@ -9,28 +10,40 @@ function getComputerChoice(){
     const options = ["piedra", "papel", "tijeras"];
     return options[Math.floor(Math.random() * options.length)];
 }
+const juego = playRound();
 
-//console.log(playerSelection);
-//console.log(computerSelection);
-
+// Se juega una ronda
 function playRound(){
-    let playerSelection = playerChoice();
+    const playerSelection = playerChoice();
     const computerSelection = getComputerChoice();
-    
+
     console.log(playerSelection);
     console.log(computerSelection);
 
     if(playerSelection == "piedra" && computerSelection == "tijeras"
     || playerSelection == "papel" && computerSelection == "piedra"
     || playerSelection == "tijeras" && computerSelection == "papel"){
-        return `Felicidades, ${user}! ${playerSelection} le gana a ${computerSelection}`;
+        return 1, 
+        console.log(`Felicidades, ${user}! ${playerSelection} le gana a ${computerSelection}`);
     } else if(computerSelection == "piedra" && playerSelection == "tijeras"
     || computerSelection == "papel" && playerSelection == "piedra"
     || computerSelection == "tijeras" && playerSelection == "papel"){
-        return `Lo siento, ${user}! ${computerSelection} le gana a ${playerSelection}`;
+        return 2,
+        console.log(`Lo siento, ${user}! ${computerSelection} le gana a ${playerSelection}`);
     } else{
-        return `Es un empate, ambos eligieron ${playerSelection}`;
+        return 3,
+        console.log(`Es un empate, ambos eligieron ${playerSelection}`);
     }
 }
 
-console.log(playRound());
+let playerScore = +("");
+let computerScore = +("");
+
+//Se juega una ronda de 5
+function game(){
+    for(i = 1; i <= 5; i++){
+        playRound();
+    }
+}
+
+game();
