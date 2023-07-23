@@ -1,0 +1,66 @@
+:root{
+    --fondo_primario: #113537;
+
+    --boton_primario: #EFF1F3;
+    --boton_secundario: #7C72A0;
+    --boton_font_primario: #041B15;
+    --boton_font_secundatio: #5B3000;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--fondo_primario);
+}
+
+.container{
+    display: flex;
+}
+
+.aside{
+    width: 30vw;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+}
+
+.marcador{
+    height: 25vh;
+}
+
+.game{
+    height: 50vh;
+}
+
+.botonera{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 25vh;
+}
+
+.btn{
+    width: 100px;
+    height: 100px;
+    background-color: var(--boton_primario);
+    color: var(--boton_font_primario);
+    font-size: 50px;
+    border-radius: 50%;
+    border: none;
+    transition: .5s;
+}
+
+.btn:hover{
+    background-color: var(--boton_secundario);
+    color: var(--boton_font_secundatio);
+    width: 110px;
+    height: 110px;
+    cursor: pointer;
+}
